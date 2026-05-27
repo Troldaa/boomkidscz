@@ -23,9 +23,9 @@ const Footer: React.FC = () => {
               Vytváříme nezapomenutelné zážitky pro děti i dospělé. Jsme tým profesionálních animátorů, který přináší radost na každou akci.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="bg-white/20 p-3 rounded-full hover:bg-white hover:text-boom-blue transition-all">FB</a>
-              <a href="#" className="bg-white/20 p-3 rounded-full hover:bg-white hover:text-boom-blue transition-all">IG</a>
-              <a href="#" className="bg-white/20 p-3 rounded-full hover:bg-white hover:text-boom-blue transition-all">YT</a>
+              <a href="https://facebook.com/boomkidscz" target="_blank" rel="noopener noreferrer" className="bg-white/20 p-3 rounded-full hover:bg-white hover:text-boom-blue transition-all">FB</a>
+              <a href="https://instagram.com/boomkidscz" target="_blank" rel="noopener noreferrer" className="bg-white/20 p-3 rounded-full hover:bg-white hover:text-boom-blue transition-all">IG</a>
+              <a href="https://youtube.com/@boomkidscz" target="_blank" rel="noopener noreferrer" className="bg-white/20 p-3 rounded-full hover:bg-white hover:text-boom-blue transition-all">YT</a>
             </div>
           </div>
 

@@ -3,15 +3,22 @@ import { motion } from 'framer-motion';
 import { Calendar, PartyPopper, Rocket, Star } from 'lucide-react';
 
 const Hero: React.FC = () => {
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const ctaButtons = [
-    { text: 'Nezávazná poptávka', color: 'bg-boom-blue', icon: PartyPopper, delay: 0.1 },
-    { text: 'Rezervovat termín', color: 'bg-boom-yellow', icon: Calendar, delay: 0.2 },
-    { text: 'Podívat se na programy', color: 'bg-boom-orange', icon: Rocket, delay: 0.3 },
-    { text: 'Příměstské tábory', color: 'bg-boom-red', icon: Star, delay: 0.4 },
+    { text: 'Nezávazná poptávka', color: 'bg-boom-blue', icon: PartyPopper, delay: 0.1, id: 'poptavka' },
+    { text: 'Rezervovat termín', color: 'bg-boom-yellow', icon: Calendar, delay: 0.2, id: 'rezervace' },
+    { text: 'Podívat se na programy', color: 'bg-boom-orange', icon: Rocket, delay: 0.3, id: 'sluzby' },
+    { text: 'Příměstské tábory', color: 'bg-boom-red', icon: Star, delay: 0.4, id: 'tabory' },
   ];
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-boom-blue to-blue-300">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-boom-blue to-blue-300">
       {/* Background Cartoon Elements */}
       <div className="absolute inset-0 z-0">
         {/* Clouds */}
@@ -54,14 +61,22 @@ const Hero: React.FC = () => {
       <div className="container mx-auto px-4 relative z-10 text-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ type: "spring", stiffness: 100 }}
+          animate={{
+            opacity: 1,
+            scale: 1,
+            rotate: [0, -5, 5, -5, 0],
+          }}
+          transition={{
+            opacity: { duration: 0.5 },
+            scale: { type: "spring", stiffness: 100 },
+            rotate: { duration: 4, repeat: Infinity, ease: "easeInOut" }
+          }}
           className="mb-8 flex justify-center"
         >
           <img
-            src="/logo.png"
+            src="/mascot.png"
             alt="Mascot"
-            className="h-40 md:h-64 drop-shadow-2xl animate-float"
+            className="h-48 md:h-80 drop-shadow-2xl"
           />
         </motion.div>
 
@@ -88,6 +103,7 @@ const Hero: React.FC = () => {
           {ctaButtons.map((btn, index) => (
             <motion.button
               key={index}
+              onClick={() => scrollToSection(btn.id)}
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: btn.delay }}

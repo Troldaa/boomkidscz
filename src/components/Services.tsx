@@ -1,15 +1,17 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Tent, FerrisWheel, School, CheckCircle2 } from 'lucide-react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Tent, FerrisWheel, School, CheckCircle2, X } from 'lucide-react';
 
 const services = [
   {
+    id: 'tabory',
     title: 'Příměstské tábory',
     icon: Tent,
     color: 'bg-boom-yellow',
     textColor: 'text-amber-900',
-    items: ['Termíny po celé léto', 'Věkové skupiny 4-12 let', 'Celodenní program a strava', 'Online přihláška'],
-    description: 'Nezapomenutelné léto plné her, sportu a nových kamarádů v našich příměstských táborech.'
+    items: ['Termíny po celé léto', 'Věkové skupiny 6-12 let', 'Celodenní program a strava', 'Online přihláška'],
+    description: 'Nezapomenutelné léto plné her, sportu a nových kamarádů v našich příměstských táborech.',
+    hasFlyer: true
   },
   {
     title: 'Akce na festivalech',
@@ -30,6 +32,8 @@ const services = [
 ];
 
 const Services: React.FC = () => {
+  const [showFlyer, setShowFlyer] = useState(false);
+
   return (
     <section id="sluzby" className="py-24 bg-blue-50">
       <div className="container mx-auto px-4">
@@ -49,6 +53,7 @@ const Services: React.FC = () => {
           {services.map((service, index) => (
             <motion.div
               key={index}
+              id={service.id}
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -77,13 +82,49 @@ const Services: React.FC = () => {
                 ))}
               </ul>
 
-              <button className="bg-white text-slate-800 py-3 rounded-2xl font-baloo font-bold shadow-sm hover:shadow-cartoon-hover hover:scale-105 transition-all">
+              <button
+                onClick={() => service.hasFlyer ? setShowFlyer(true) : null}
+                className="bg-white text-slate-800 py-3 rounded-2xl font-baloo font-bold shadow-sm hover:shadow-cartoon-hover hover:scale-105 transition-all"
+              >
                 VÍCE INFORMACÍ
               </button>
             </motion.div>
           ))}
         </div>
       </div>
+
+      {/* Flyer Modal */}
+      <AnimatePresence>
+        {showFlyer && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/80"
+            onClick={() => setShowFlyer(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.9, y: 20 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.9, y: 20 }}
+              className="relative max-w-4xl w-full bg-white rounded-3xl overflow-hidden"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                onClick={() => setShowFlyer(false)}
+                className="absolute top-4 right-4 z-10 bg-white/80 p-2 rounded-full hover:bg-white transition-colors"
+              >
+                <X size={24} className="text-slate-800" />
+              </button>
+              <img
+                src="/flyer.png"
+                alt="Příměstský tábor leták"
+                className="w-full h-auto"
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };

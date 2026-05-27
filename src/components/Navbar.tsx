@@ -55,13 +55,14 @@ const Navbar: React.FC = () => {
               {link.name}
             </Link>
           ))}
-          <motion.button
+          <motion.a
+            href="/#poptavka"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="bg-boom-red text-white px-6 py-2 rounded-full font-baloo font-bold shadow-cartoon hover:shadow-cartoon-hover transition-all"
           >
             POPTÁVKA
-          </motion.button>
+          </motion.a>
         </div>
 
         {/* Mobile Menu Toggle */}

@@ -4,28 +4,22 @@ import { Star, Quote } from 'lucide-react';
 
 const reviews = [
   {
-    name: "Jana Nováková",
-    text: "Děti byly naprosto nadšené, nejlepší program na festivalu! Animátoři jsou energičtí a dokážou zaujmout i ty nejmenší.",
+    name: "Rodič",
+    text: "Děti byly naprosto nadšené, nejlepší program na festivalu!",
     stars: 5,
-    role: "Maminka dvou dětí"
+    role: "Recenze z akce"
   },
   {
-    name: "Petr Svoboda",
-    text: "Skvělý přístup animátorů a perfektní organizace. Vše proběhlo bez problémů, doporučuji všem rodičům.",
+    name: "Rodič",
+    text: "Skvělý přístup animátorů a perfektní organizace.",
     stars: 5,
-    role: "Tatínek"
+    role: "Recenze z akce"
   },
   {
-    name: "Lucie Králová",
-    text: "Syn nechtěl domů. Určitě objednáme znovu na další rodinnou oslavu. Děkujeme celému týmu Boom Kids!",
+    name: "Rodič",
+    text: "Syn nechtěl domů. Určitě objednáme znovu.",
     stars: 5,
-    role: "Maminka"
-  },
-  {
-    name: "Marek Kučera",
-    text: "Nejlepší příměstský tábor v okolí. Děti se každý den vracely plné zážitků a nových dovedností.",
-    stars: 5,
-    role: "Rodič"
+    role: "Recenze z akce"
   }
 ];
 
