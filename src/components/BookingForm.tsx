@@ -1,6 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { Send, User, Mail, Phone, Calendar, Users, MessageSquare } from 'lucide-react';
 
 const BookingForm: React.FC = () => {
   return (
