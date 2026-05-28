@@ -30,20 +30,28 @@ const Navbar: React.FC = () => {
       }`}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
-        <Link to="/" className="flex items-center gap-2 group">
+        <Link to="/" className="flex items-center gap-2 group order-1 md:order-none">
           <motion.img
-            src="/logo.png"
+            src="/assets/panda-mascot.png"
             alt="Boom Kids CZ Logo"
-            className="h-12 w-auto drop-shadow-md"
+            className="h-12 w-12 rounded-full object-contain bg-white border-2 border-white drop-shadow-md"
             whileHover={{ scale: 1.1, rotate: 5 }}
           />
-          <span className={`text-2xl font-baloo font-bold tracking-tight ${isScrolled ? 'text-boom-blue' : 'text-white drop-shadow-md'}`}>
+          <span className={`text-2xl font-baloo font-bold tracking-tight hidden sm:block ${isScrolled ? 'text-boom-blue' : 'text-white drop-shadow-md'}`}>
             BOOM KIDS CZ
           </span>
         </Link>
 
+        {/* Mobile Menu Toggle */}
+        <button
+          className={`md:hidden p-2 rounded-lg order-2 ${isScrolled ? 'text-slate-800' : 'text-white'}`}
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          {isOpen ? <X size={32} /> : <Menu size={32} />}
+        </button>
+
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-8 order-2">
           {navLinks.map((link) => (
             <Link
               key={link.name}
@@ -56,7 +64,7 @@ const Navbar: React.FC = () => {
             </Link>
           ))}
           <motion.a
-            href="/#poptavka"
+            href="/#rezervace"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="bg-boom-red text-white px-6 py-2 rounded-full font-baloo font-bold shadow-cartoon hover:shadow-cartoon-hover transition-all"
@@ -64,14 +72,6 @@ const Navbar: React.FC = () => {
             POPTÁVKA
           </motion.a>
         </div>
-
-        {/* Mobile Menu Toggle */}
-        <button
-          className={`md:hidden p-2 rounded-lg ${isScrolled ? 'text-slate-800' : 'text-white'}`}
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? <X size={32} /> : <Menu size={32} />}
-        </button>
       </div>
 
       {/* Mobile Menu */}

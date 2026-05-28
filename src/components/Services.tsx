@@ -11,7 +11,8 @@ const services = [
     textColor: 'text-amber-900',
     items: ['Termíny po celé léto', 'Věkové skupiny 6-12 let', 'Celodenní program a strava', 'Online přihláška'],
     description: 'Nezapomenutelné léto plné her, sportu a nových kamarádů v našich příměstských táborech.',
-    hasFlyer: true
+    hasFlyer: true,
+    actionId: 'rezervace'
   },
   {
     title: 'Akce na festivalech',
@@ -19,7 +20,8 @@ const services = [
     color: 'bg-boom-orange',
     textColor: 'text-orange-900',
     items: ['Dětské koutky & Family days', 'Stage program & Moderování', 'Kreativní workshopy', 'Maskoti & Atrakce'],
-    description: 'Kompletní zajištění dětského programu pro festivaly, městské slavnosti i firemní akce.'
+    description: 'Kompletní zajištění dětského programu pro festivaly, městské slavnosti i firemní akce.',
+    actionId: 'rezervace'
   },
   {
     title: 'Programy pro školy',
@@ -27,12 +29,20 @@ const services = [
     color: 'bg-boom-blue',
     textColor: 'text-blue-900',
     items: ['Dny dětí na klíč', 'Školní karnevaly', 'Sportovní dny', 'Pohádkové cesty'],
-    description: 'Zábavné a vzdělávací programy přímo ve vaší škole či školce. Profesionální přístup zaručen.'
+    description: 'Zábavné a vzdělávací programy přímo ve vaší škole či školce. Profesionální přístup zaručen.',
+    actionId: 'rezervace'
   }
 ];
 
 const Services: React.FC = () => {
   const [showFlyer, setShowFlyer] = useState(false);
+
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <section id="sluzby" className="py-24 bg-blue-50">
@@ -82,12 +92,22 @@ const Services: React.FC = () => {
                 ))}
               </ul>
 
-              <button
-                onClick={() => service.hasFlyer ? setShowFlyer(true) : null}
-                className="bg-white text-slate-800 py-3 rounded-2xl font-baloo font-bold shadow-sm hover:shadow-cartoon-hover hover:scale-105 transition-all"
-              >
-                VÍCE INFORMACÍ
-              </button>
+              <div className="flex flex-col gap-3">
+                <button
+                  onClick={() => scrollToSection(service.actionId)}
+                  className="bg-white text-slate-800 py-3 rounded-2xl font-baloo font-bold shadow-sm hover:shadow-cartoon-hover hover:scale-105 transition-all"
+                >
+                  {service.hasFlyer ? 'PŘIHLÁSIT SE' : 'POPTAT AKCI'}
+                </button>
+                {service.hasFlyer && (
+                  <button
+                    onClick={() => setShowFlyer(true)}
+                    className="text-amber-900/70 font-fredoka font-bold text-sm underline underline-offset-4 hover:text-amber-900 transition-colors"
+                  >
+                    ZOBRAZIT LETÁK
+                  </button>
+                )}
+              </div>
             </motion.div>
           ))}
         </div>
@@ -117,7 +137,7 @@ const Services: React.FC = () => {
                 <X size={24} className="text-slate-800" />
               </button>
               <img
-                src="/flyer.png"
+                src="/assets/flyer.png"
                 alt="Příměstský tábor leták"
                 className="w-full h-auto"
               />

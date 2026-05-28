@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
           {/* Logo & About */}
           <div>
             <div className="flex items-center gap-2 mb-6">
-              <img src="/logo.png" alt="Boom Kids Logo" className="h-12" />
+              <img src="/assets/flyer.png" alt="Boom Kids Logo" className="h-12 w-12 rounded-full object-cover border-2 border-white" />
               <span className="text-3xl font-baloo font-bold">BOOM KIDS CZ</span>
             </div>
             <p className="font-fredoka text-blue-50 opacity-90 leading-relaxed mb-6">

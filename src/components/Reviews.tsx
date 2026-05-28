@@ -4,22 +4,22 @@ import { Star, Quote } from 'lucide-react';
 
 const reviews = [
   {
-    name: "Rodič",
-    text: "Děti byly naprosto nadšené, nejlepší program na festivalu!",
+    name: "Michala T.",
+    text: "Honzu moc moc doporučujeme! Děti ho naprosto milovaly a celá akce byla díky němu i Inně naprosto skvělá. Profesionální přístup, obrovská energie a hromada zábavy. Nejlepší animátoři, které jsme kdy na akci měli. Určitě se uvidíme i příští rok!",
     stars: 5,
-    role: "Recenze z akce"
+    role: "Maminka (Oslava narozenin)"
   },
   {
-    name: "Rodič",
-    text: "Skvělý přístup animátorů a perfektní organizace.",
+    name: "Petr M.",
+    text: "Skvělý přístup animátorů a perfektní organizace. Naše firemní akce Family Day se díky nim proměnila v nezapomenutelný zážitek plný smíchu a radosti. Děti se bavily, maskoti byli úžasní a nafukovací atrakce v neustálém obležení. Děkujeme celému týmu za skvěle odvedenou práci a profesionální přístup!",
     stars: 5,
-    role: "Recenze z akce"
+    role: "Firemní Family Day"
   },
   {
-    name: "Rodič",
-    text: "Syn nechtěl domů. Určitě objednáme znovu.",
+    name: "Lucie S.",
+    text: "Syn nechtěl domů. Určitě objednáme znovu. Příměstský tábor s Boom Kids CZ předčil všechna naše očekávání. Program byl pestrý, animátoři velmi milí a vstřícní. Každý den se syn vracel nadšený a plný nových zážitků. Je vidět, že práci s dětmi dělají srdcem a s velkým nasazením. Moc děkujeme!",
     stars: 5,
-    role: "Recenze z akce"
+    role: "Maminka (Příměstský tábor)"
   }
 ];
 

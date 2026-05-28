@@ -14,7 +14,7 @@ const Hero: React.FC = () => {
     { text: 'Nezávazná poptávka', color: 'bg-boom-blue', icon: PartyPopper, delay: 0.1, id: 'poptavka' },
     { text: 'Rezervovat termín', color: 'bg-boom-yellow', icon: Calendar, delay: 0.2, id: 'rezervace' },
     { text: 'Podívat se na programy', color: 'bg-boom-orange', icon: Rocket, delay: 0.3, id: 'sluzby' },
-    { text: 'Příměstské tábory', color: 'bg-boom-red', icon: Star, delay: 0.4, id: 'tabory' },
+    { text: 'Příměstské tábory', color: 'bg-boom-red', icon: Star, delay: 0.4, id: 'rezervace' },
   ];
 
   return (
@@ -74,9 +74,9 @@ const Hero: React.FC = () => {
           className="mb-8 flex justify-center"
         >
           <img
-            src="/mascot.png"
+            src="/assets/panda-mascot.png"
             alt="Mascot"
-            className="h-48 md:h-80 drop-shadow-2xl"
+            className="h-48 md:h-80 drop-shadow-2xl object-contain"
           />
         </motion.div>
 
