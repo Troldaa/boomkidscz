@@ -14,11 +14,11 @@ const Hero: React.FC = () => {
     { text: 'Nezávazná poptávka', color: 'bg-boom-blue', icon: PartyPopper, delay: 0.1, id: 'poptavka' },
     { text: 'Rezervovat termín', color: 'bg-boom-yellow', icon: Calendar, delay: 0.2, id: 'rezervace' },
     { text: 'Podívat se na programy', color: 'bg-boom-orange', icon: Rocket, delay: 0.3, id: 'sluzby' },
-    { text: 'Příměstské tábory', color: 'bg-boom-red', icon: Star, delay: 0.4, id: 'rezervace' },
+    { text: 'Příměstské tábory', color: 'bg-boom-red', icon: Star, delay: 0.4, id: 'tabory' },
   ];
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-boom-blue to-blue-300">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-blue-400 to-blue-100">
       {/* Background Cartoon Elements */}
       <div className="absolute inset-0 z-0">
         {/* Clouds */}
@@ -65,18 +65,20 @@ const Hero: React.FC = () => {
             opacity: 1,
             scale: 1,
             rotate: [0, -5, 5, -5, 0],
+            y: [0, -20, 0]
           }}
           transition={{
             opacity: { duration: 0.5 },
             scale: { type: "spring", stiffness: 100 },
-            rotate: { duration: 4, repeat: Infinity, ease: "easeInOut" }
+            rotate: { duration: 4, repeat: Infinity, ease: "easeInOut" },
+            y: { duration: 4, repeat: Infinity, ease: "easeInOut" }
           }}
           className="mb-8 flex justify-center"
         >
           <img
             src="/assets/panda-mascot.png"
             alt="Mascot"
-            className="h-48 md:h-80 drop-shadow-2xl object-contain"
+            className="h-48 md:h-80 drop-shadow-2xl object-contain filter drop-shadow-[0_0_15px_rgba(255,255,255,0.5)] saturate-[0.8] brightness-[1.05] hue-rotate-[10deg]"
           />
         </motion.div>
 

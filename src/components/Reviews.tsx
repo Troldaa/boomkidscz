@@ -5,21 +5,21 @@ import { Star, Quote } from 'lucide-react';
 const reviews = [
   {
     name: "Michala T.",
-    text: "Honzu moc moc doporučujeme! Děti ho naprosto milovaly a celá akce byla díky němu i Inně naprosto skvělá. Profesionální přístup, obrovská energie a hromada zábavy. Nejlepší animátoři, které jsme kdy na akci měli. Určitě se uvidíme i příští rok!",
+    text: "Honzu moc moc doporučujeme! Jako hlavní animátor Boom Kids CZ předvedl naprosto profesionální výkon. Děti byly celou dobu zaujaté, hry byly originální a bezpečné. Rozhodně nejlepší volba pro naši rodinnou oslavu.",
     stars: 5,
-    role: "Maminka (Oslava narozenin)"
-  },
-  {
-    name: "Petr M.",
-    text: "Skvělý přístup animátorů a perfektní organizace. Naše firemní akce Family Day se díky nim proměnila v nezapomenutelný zážitek plný smíchu a radosti. Děti se bavily, maskoti byli úžasní a nafukovací atrakce v neustálém obležení. Děkujeme celému týmu za skvěle odvedenou práci a profesionální přístup!",
-    stars: 5,
-    role: "Firemní Family Day"
+    role: "Spokojená maminka"
   },
   {
     name: "Lucie S.",
-    text: "Syn nechtěl domů. Určitě objednáme znovu. Příměstský tábor s Boom Kids CZ předčil všechna naše očekávání. Program byl pestrý, animátoři velmi milí a vstřícní. Každý den se syn vracel nadšený a plný nových zážitků. Je vidět, že práci s dětmi dělají srdcem a s velkým nasazením. Moc děkujeme!",
+    text: "Skvělý přístup animátorů a perfektní organizace celého odpoledne. Oceňuji hlavně trpělivost a energii, kterou do práce s dětmi dávají. Naše děti o ničem jiném nemluví už týden!",
     stars: 5,
-    role: "Maminka (Příměstský tábor)"
+    role: "Rodič"
+  },
+  {
+    name: "Jana R.",
+    text: "Syn nechtěl domů a doteď vzpomíná na maskota pandy. Program byl pestrý, od sportovních aktivit až po kreativní dílničky. Určitě objednáme znovu na příští rok!",
+    stars: 5,
+    role: "Maminka"
   }
 ];
 
@@ -52,7 +52,7 @@ const Reviews: React.FC = () => {
           <motion.div
             animate={{ x: ["0%", "-50%"] }}
             transition={{
-              duration: 30,
+              duration: 50, // Increased duration for longer reviews
               repeat: Infinity,
               ease: "linear"
             }}

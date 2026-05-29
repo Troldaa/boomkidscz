@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin, Facebook, Instagram, Youtube } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -16,16 +16,22 @@ const Footer: React.FC = () => {
           {/* Logo & About */}
           <div>
             <div className="flex items-center gap-2 mb-6">
-              <img src="/assets/flyer.png" alt="Boom Kids Logo" className="h-12 w-12 rounded-full object-cover border-2 border-white" />
+              <img src="/assets/panda-mascot.png" alt="Boom Kids Logo" className="h-12 w-12 rounded-full object-contain bg-white border-2 border-white" />
               <span className="text-3xl font-baloo font-bold">BOOM KIDS CZ</span>
             </div>
             <p className="font-fredoka text-blue-50 opacity-90 leading-relaxed mb-6">
               Vytváříme nezapomenutelné zážitky pro děti i dospělé. Jsme tým profesionálních animátorů, který přináší radost na každou akci.
             </p>
             <div className="flex gap-4">
-              <a href="https://facebook.com/boomkidscz" target="_blank" rel="noopener noreferrer" className="bg-white/20 p-3 rounded-full hover:bg-white hover:text-boom-blue transition-all">FB</a>
-              <a href="https://instagram.com/boomkidscz" target="_blank" rel="noopener noreferrer" className="bg-white/20 p-3 rounded-full hover:bg-white hover:text-boom-blue transition-all">IG</a>
-              <a href="https://youtube.com/@boomkidscz" target="_blank" rel="noopener noreferrer" className="bg-white/20 p-3 rounded-full hover:bg-white hover:text-boom-blue transition-all">YT</a>
+              <a href="https://facebook.com/boomkidscz" target="_blank" rel="noopener noreferrer" className="bg-white/20 p-3 rounded-full hover:bg-white hover:text-boom-blue transition-all" aria-label="Facebook">
+                <Facebook size={20} />
+              </a>
+              <a href="https://instagram.com/boomkidscz" target="_blank" rel="noopener noreferrer" className="bg-white/20 p-3 rounded-full hover:bg-white hover:text-boom-blue transition-all" aria-label="Instagram">
+                <Instagram size={20} />
+              </a>
+              <a href="https://youtube.com/@boomkidscz" target="_blank" rel="noopener noreferrer" className="bg-white/20 p-3 rounded-full hover:bg-white hover:text-boom-blue transition-all" aria-label="Youtube">
+                <Youtube size={20} />
+              </a>
             </div>
           </div>
 
@@ -46,11 +52,11 @@ const Footer: React.FC = () => {
             <ul className="space-y-4 font-fredoka">
               <li className="flex items-center gap-3">
                 <div className="bg-white/20 p-2 rounded-lg"><Phone size={20} /></div>
-                <span>+420 123 456 789</span>
+                <span>725 404 944</span>
               </li>
               <li className="flex items-center gap-3">
                 <div className="bg-white/20 p-2 rounded-lg"><Mail size={20} /></div>
-                <span>info@boomkidscz.cz</span>
+                <span>spoluprace.jakubecz@gmail.com</span>
               </li>
               <li className="flex items-center gap-3">
                 <div className="bg-white/20 p-2 rounded-lg"><MapPin size={20} /></div>

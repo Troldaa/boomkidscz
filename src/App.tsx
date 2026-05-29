@@ -3,10 +3,12 @@ import Home from './pages/Home';
 import Animators from './pages/Animators';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import ScrollToHash from './components/ScrollToHash';
 
 function App() {
   return (
     <Router>
+      <ScrollToHash />
       <div className="min-h-screen flex flex-col">
         <Navbar />
         <main className="flex-grow">
