@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Star, Target, Trophy, PartyPopper, Heart } from 'lucide-react';
+import { Baby, Dumbbell, Heart, Music, PartyPopper, ShieldCheck, Star, Target, Trophy } from 'lucide-react';
 
 const animators = [
   {
@@ -8,20 +8,30 @@ const animators = [
     age: 18,
     role: 'Hlavní animátor',
     image: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&q=80&w=800',
-    description: 'Hlavní animátor Boom Kids CZ. 1,5 roku trenér juda, zkušenosti s vedením příměstských i klasických táborů, vedení sportovních aktivit a práce s dětmi. Aktivní sportovec – thaibox.',
+    description: 'Hlavní animátor BOOMKIDS.CZ. 1,5 roku trenér juda, zkušenosti s vedením příměstských i klasických táborů, vedení sportovních aktivit a práce s dětmi. Aktivní sportovec – thaibox.',
     icons: [Target, Trophy, PartyPopper, Heart],
     badges: ['Judo', 'Thaibox', 'Sport', 'Zábava'],
     color: 'bg-boom-blue'
   },
   {
-    name: 'Inna',
+    name: 'Ina',
     age: 17,
     role: 'Animátorka',
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=800',
-    description: 'Doplňte zkušenosti animátora. Naše usměvavá Inna se specializuje na kreativní programy, tanec a malování na obličej.',
-    icons: [Star, Heart, PartyPopper],
-    badges: ['Tanec', 'Kreativita', 'Úsměv'],
+    image: '/assets/ina.jpg',
+    description: 'Ina má zkušenosti s hlídáním dětí ve věku 2–4 let a s tanečními aktivitami pro děti ve věku 4–6 let. Do programu přináší energii, pohyb a citlivý přístup k nejmenším dětem.',
+    icons: [Baby, Music, Heart, Star],
+    badges: ['Hlídání dětí', 'Tanec', 'Nejmenší děti', 'Energie'],
     color: 'bg-boom-yellow'
+  },
+  {
+    name: 'Tomáš',
+    age: 18,
+    role: 'Animátor',
+    image: '/assets/tomas.jpg',
+    description: 'Tomáš se podílel na organizaci tréninků na kempu míčových sportů, trénoval děti v házené, pomáhal jako rozhodčí a se správou skóre. Zkušenosti s dětmi má také z prostředí ordinace.',
+    icons: [Dumbbell, Trophy, ShieldCheck, PartyPopper],
+    badges: ['Házená', 'Sportovní kemp', 'Rozhodčí', 'Práce s dětmi'],
+    color: 'bg-boom-orange'
   }
 ];
 
@@ -53,19 +63,18 @@ const Animators: React.FC<AnimatorsProps> = ({ isFullPage = false }) => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-12 max-w-7xl mx-auto">
           {animators.map((animator, index) => (
             <motion.div
-              key={index}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              key={animator.name}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.2 }}
+              transition={{ delay: index * 0.15 }}
               whileHover={{ scale: 1.02 }}
-              className="bg-white rounded-[3rem] overflow-hidden shadow-2xl flex flex-col lg:flex-row border-4 border-white group"
+              className="bg-white rounded-[3rem] overflow-hidden shadow-2xl flex flex-col border-4 border-white group"
             >
-              {/* Photo Side */}
-              <div className="lg:w-1/2 relative h-80 lg:h-auto overflow-hidden">
+              <div className="relative h-80 overflow-hidden">
                 <img
                   src={animator.image}
                   alt={animator.name}
@@ -76,8 +85,7 @@ const Animators: React.FC<AnimatorsProps> = ({ isFullPage = false }) => {
                 </div>
               </div>
 
-              {/* Info Side */}
-              <div className="lg:w-1/2 p-10 flex flex-col">
+              <div className="p-8 flex flex-col flex-grow">
                 <div className="mb-6">
                   <span className="text-boom-red font-baloo font-bold uppercase tracking-wider text-sm">{animator.role}</span>
                   <h2 className="text-4xl font-baloo font-bold text-slate-800">{animator.name}</h2>
