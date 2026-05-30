@@ -30,16 +30,29 @@ const Navbar: React.FC = () => {
       }`}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
+        <Link to="/" className="flex items-center gap-3 group order-2 md:order-1">
+          <motion.img
+            src="/assets/boomkids-logo-transparent.png"
+            alt="BOOMKIDS.CZ Logo"
+            className="h-14 w-14 object-contain drop-shadow-md"
+            whileHover={{ scale: 1.1, rotate: 5 }}
+          />
+          <span className={`text-2xl font-baloo font-extrabold tracking-tight hidden sm:block ${isScrolled ? 'text-boom-red' : 'text-white drop-shadow-md'}`}>
+            BOOMKIDS.CZ
+          </span>
+        </Link>
+
         {/* Mobile Menu Toggle */}
         <button
-          className={`md:hidden p-2 rounded-lg order-1 ${isScrolled ? 'text-slate-800' : 'text-white'}`}
+          className={`md:hidden p-2 rounded-lg order-1 md:order-2 ${isScrolled ? 'text-slate-800' : 'text-white'}`}
           onClick={() => setIsOpen(!isOpen)}
+          aria-label="Otevřít menu"
         >
           {isOpen ? <X size={32} /> : <Menu size={32} />}
         </button>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-8 order-2 md:order-1">
+        <div className="hidden md:flex items-center gap-8 order-3 ml-auto">
           {navLinks.map((link) => (
             <Link
               key={link.name}
@@ -63,19 +76,6 @@ const Navbar: React.FC = () => {
             </Link>
           </motion.div>
         </div>
-
-        {/* Logo - Moved to Right on Desktop */}
-        <Link to="/" className="flex items-center gap-2 group order-1 md:order-2">
-          <span className={`text-2xl font-baloo font-bold tracking-tight hidden lg:block ${isScrolled ? 'text-boom-blue' : 'text-white drop-shadow-md'}`}>
-            BOOM KIDS CZ
-          </span>
-          <motion.img
-            src="/assets/panda-mascot.png"
-            alt="Boom Kids CZ Logo"
-            className="h-12 w-12 rounded-full object-contain bg-white border-2 border-white drop-shadow-md filter saturate-[0.8] brightness-[1.05] hue-rotate-[10deg]"
-            whileHover={{ scale: 1.1, rotate: 5 }}
-          />
-        </Link>
       </div>
 
       {/* Mobile Menu */}
