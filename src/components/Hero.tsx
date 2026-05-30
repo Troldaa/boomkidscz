@@ -19,113 +19,57 @@ const Hero: React.FC = () => {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-blue-400 to-blue-100">
-      {/* Background Cartoon Elements */}
       <div className="absolute inset-0 z-0">
-        {/* Clouds */}
-        <motion.div
-          animate={{ x: [0, 50, 0] }}
-          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          className="absolute top-20 left-10 opacity-60"
-        >
+        <motion.div animate={{ x: [0, 50, 0] }} transition={{ duration: 20, repeat: Infinity, ease: 'linear' }} className="absolute top-20 left-10 opacity-60">
           <div className="w-48 h-16 bg-white rounded-full relative">
-            <div className="absolute -top-10 left-10 w-24 h-24 bg-white rounded-full"></div>
-            <div className="absolute -top-6 right-6 w-20 h-20 bg-white rounded-full"></div>
+            <div className="absolute -top-10 left-10 w-24 h-24 bg-white rounded-full" />
+            <div className="absolute -top-6 right-6 w-20 h-20 bg-white rounded-full" />
           </div>
         </motion.div>
-
-        <motion.div
-          animate={{ x: [0, -70, 0] }}
-          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-          className="absolute top-40 right-20 opacity-60"
-        >
+        <motion.div animate={{ x: [0, -70, 0] }} transition={{ duration: 25, repeat: Infinity, ease: 'linear' }} className="absolute top-40 right-20 opacity-60">
           <div className="w-64 h-20 bg-white rounded-full relative">
-            <div className="absolute -top-12 left-12 w-28 h-28 bg-white rounded-full"></div>
-            <div className="absolute -top-8 right-10 w-24 h-24 bg-white rounded-full"></div>
+            <div className="absolute -top-12 left-12 w-28 h-28 bg-white rounded-full" />
+            <div className="absolute -top-8 right-10 w-24 h-24 bg-white rounded-full" />
           </div>
         </motion.div>
-
-        {/* Splashes / Shapes */}
-        <motion.div
-          animate={{ rotate: 360 }}
-          transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-          className="absolute -bottom-20 -left-20 w-80 h-80 bg-boom-yellow/20 rounded-full blur-3xl"
-        ></motion.div>
-        <motion.div
-          animate={{ rotate: -360 }}
-          transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
-          className="absolute top-1/2 -right-20 w-96 h-96 bg-boom-red/10 rounded-full blur-3xl"
-        ></motion.div>
+        <motion.div animate={{ rotate: 360 }} transition={{ duration: 40, repeat: Infinity, ease: 'linear' }} className="absolute -bottom-20 -left-20 w-80 h-80 bg-boom-yellow/20 rounded-full blur-3xl" />
+        <motion.div animate={{ rotate: -360 }} transition={{ duration: 35, repeat: Infinity, ease: 'linear' }} className="absolute top-1/2 -right-20 w-96 h-96 bg-boom-red/10 rounded-full blur-3xl" />
       </div>
 
-      {/* Main Content */}
       <div className="container mx-auto px-4 relative z-10 text-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
-          animate={{
-            opacity: 1,
-            scale: 1,
-            rotate: [0, -5, 5, -5, 0],
-            y: [0, -20, 0]
-          }}
-          transition={{
-            opacity: { duration: 0.5 },
-            scale: { type: "spring", stiffness: 100 },
-            rotate: { duration: 4, repeat: Infinity, ease: "easeInOut" },
-            y: { duration: 4, repeat: Infinity, ease: "easeInOut" }
-          }}
+          animate={{ opacity: 1, scale: 1, rotate: [0, -5, 5, -5, 0], y: [0, -20, 0] }}
+          transition={{ opacity: { duration: 0.5 }, scale: { type: 'spring', stiffness: 100 }, rotate: { duration: 4, repeat: Infinity, ease: 'easeInOut' }, y: { duration: 4, repeat: Infinity, ease: 'easeInOut' } }}
           className="mb-8 flex justify-center"
         >
-          <motion.div
-            className="relative h-48 w-48 md:h-80 md:w-80 drop-shadow-2xl"
-            animate={{ rotate: [0, 2, -2, 2, 0] }}
-            transition={{ duration: 2.4, repeat: Infinity, ease: 'easeInOut' }}
-            aria-label="Mávající panda Boom Kids CZ"
-            role="img"
-          >
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="relative h-[78%] w-[68%] rounded-[48%] bg-white shadow-xl border-4 border-slate-900">
-                <div className="absolute -top-[13%] left-[2%] h-[30%] w-[30%] rounded-full bg-slate-900" />
-                <div className="absolute -top-[13%] right-[2%] h-[30%] w-[30%] rounded-full bg-slate-900" />
-                <div className="absolute top-[18%] left-[16%] h-[25%] w-[22%] -rotate-12 rounded-full bg-slate-900">
-                  <div className="absolute left-[42%] top-[36%] h-[25%] w-[25%] rounded-full bg-white" />
-                </div>
-                <div className="absolute top-[18%] right-[16%] h-[25%] w-[22%] rotate-12 rounded-full bg-slate-900">
-                  <div className="absolute left-[32%] top-[36%] h-[25%] w-[25%] rounded-full bg-white" />
-                </div>
-                <div className="absolute left-1/2 top-[45%] h-[10%] w-[13%] -translate-x-1/2 rounded-full bg-slate-900" />
-                <div className="absolute left-1/2 top-[55%] h-[18%] w-[34%] -translate-x-1/2 rounded-b-full border-b-4 border-slate-900" />
-                <motion.div
-                  className="absolute -left-[26%] top-[44%] h-[43%] w-[22%] origin-top-right rounded-full bg-slate-900"
-                  animate={{ rotate: [-28, 24, -28] }}
-                  transition={{ duration: 0.9, repeat: Infinity, ease: 'easeInOut' }}
-                />
-                <div className="absolute -right-[26%] top-[44%] h-[43%] w-[22%] rotate-12 rounded-full bg-slate-900" />
-                <div className="absolute bottom-[-15%] left-[16%] h-[25%] w-[25%] rounded-full bg-slate-900" />
-                <div className="absolute bottom-[-15%] right-[16%] h-[25%] w-[25%] rounded-full bg-slate-900" />
-              </div>
-            </div>
-          </motion.div>
+          <div className="relative h-48 w-48 md:h-80 md:w-80 drop-shadow-2xl" aria-label="Mávající červená panda BOOMKIDS.CZ" role="img">
+            <motion.img
+              src="/assets/boomkids-logo-transparent.png"
+              alt="Červená panda BOOMKIDS.CZ"
+              className="absolute inset-0 h-full w-full object-contain"
+              animate={{ rotate: [0, 1.5, -1.5, 0] }}
+              transition={{ duration: 2.2, repeat: Infinity, ease: 'easeInOut' }}
+            />
+            <motion.div
+              className="absolute left-[7%] top-[42%] h-[36%] w-[22%] origin-top-right rounded-full bg-boom-red border-[6px] border-[#8A1D22] shadow-lg"
+              animate={{ rotate: [-30, 28, -30] }}
+              transition={{ duration: 0.85, repeat: Infinity, ease: 'easeInOut' }}
+            >
+              <div className="absolute bottom-2 left-1/2 h-6 w-10 -translate-x-1/2 rounded-full bg-[#8A1D22]" />
+            </motion.div>
+          </div>
         </motion.div>
 
-        <motion.h1
-          initial={{ y: 50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          className="text-5xl md:text-8xl font-baloo font-extrabold text-white mb-6 tracking-tighter leading-tight text-3d"
-        >
+        <motion.h1 initial={{ y: 50, opacity: 0 }} animate={{ y: 0, opacity: 1 }} className="text-5xl md:text-8xl font-baloo font-extrabold text-white mb-6 tracking-tighter leading-tight text-3d">
           NEZAPOMENUTELNÉ <br />
           <span className="text-boom-yellow">DĚTSKÉ AKCE</span>
         </motion.h1>
 
-        <motion.p
-          initial={{ y: 30, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.2 }}
-          className="text-xl md:text-2xl font-fredoka font-medium text-white max-w-3xl mx-auto mb-12 drop-shadow-md"
-        >
+        <motion.p initial={{ y: 30, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.2 }} className="text-xl md:text-2xl font-fredoka font-medium text-white max-w-3xl mx-auto mb-12 drop-shadow-md">
           Profesionální animátoři, programy pro děti, tábory, festivaly a zážitky, na které děti nikdy nezapomenou.
         </motion.p>
 
-        {/* CTA Buttons Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
           {ctaButtons.map((btn, index) => (
             <motion.button
@@ -134,11 +78,7 @@ const Hero: React.FC = () => {
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: btn.delay }}
-              whileHover={{
-                scale: 1.05,
-                rotate: index % 2 === 0 ? 2 : -2,
-                boxShadow: "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)"
-              }}
+              whileHover={{ scale: 1.05, rotate: index % 2 === 0 ? 2 : -2, boxShadow: '0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)' }}
               whileTap={{ scale: 0.95 }}
               className={`${btn.color} text-white p-6 rounded-3xl shadow-cartoon border-4 border-white/30 flex flex-col items-center gap-3 transition-all group`}
             >
@@ -151,10 +91,9 @@ const Hero: React.FC = () => {
         </div>
       </div>
 
-      {/* Wave Bottom */}
       <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
         <svg className="relative block w-full h-12 md:h-24 fill-blue-50" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
+          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" />
         </svg>
       </div>
     </section>
