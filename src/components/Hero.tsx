@@ -75,11 +75,36 @@ const Hero: React.FC = () => {
           }}
           className="mb-8 flex justify-center"
         >
-          <img
-            src="/assets/panda-mascot.png"
-            alt="Mascot"
-            className="h-48 md:h-80 drop-shadow-2xl object-contain filter drop-shadow-[0_0_15px_rgba(255,255,255,0.5)] saturate-[0.8] brightness-[1.05] hue-rotate-[10deg]"
-          />
+          <motion.div
+            className="relative h-48 w-48 md:h-80 md:w-80 drop-shadow-2xl"
+            animate={{ rotate: [0, 2, -2, 2, 0] }}
+            transition={{ duration: 2.4, repeat: Infinity, ease: 'easeInOut' }}
+            aria-label="Mávající panda Boom Kids CZ"
+            role="img"
+          >
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="relative h-[78%] w-[68%] rounded-[48%] bg-white shadow-xl border-4 border-slate-900">
+                <div className="absolute -top-[13%] left-[2%] h-[30%] w-[30%] rounded-full bg-slate-900" />
+                <div className="absolute -top-[13%] right-[2%] h-[30%] w-[30%] rounded-full bg-slate-900" />
+                <div className="absolute top-[18%] left-[16%] h-[25%] w-[22%] -rotate-12 rounded-full bg-slate-900">
+                  <div className="absolute left-[42%] top-[36%] h-[25%] w-[25%] rounded-full bg-white" />
+                </div>
+                <div className="absolute top-[18%] right-[16%] h-[25%] w-[22%] rotate-12 rounded-full bg-slate-900">
+                  <div className="absolute left-[32%] top-[36%] h-[25%] w-[25%] rounded-full bg-white" />
+                </div>
+                <div className="absolute left-1/2 top-[45%] h-[10%] w-[13%] -translate-x-1/2 rounded-full bg-slate-900" />
+                <div className="absolute left-1/2 top-[55%] h-[18%] w-[34%] -translate-x-1/2 rounded-b-full border-b-4 border-slate-900" />
+                <motion.div
+                  className="absolute -left-[26%] top-[44%] h-[43%] w-[22%] origin-top-right rounded-full bg-slate-900"
+                  animate={{ rotate: [-28, 24, -28] }}
+                  transition={{ duration: 0.9, repeat: Infinity, ease: 'easeInOut' }}
+                />
+                <div className="absolute -right-[26%] top-[44%] h-[43%] w-[22%] rotate-12 rounded-full bg-slate-900" />
+                <div className="absolute bottom-[-15%] left-[16%] h-[25%] w-[25%] rounded-full bg-slate-900" />
+                <div className="absolute bottom-[-15%] right-[16%] h-[25%] w-[25%] rounded-full bg-slate-900" />
+              </div>
+            </div>
+          </motion.div>
         </motion.div>
 
         <motion.h1
